@@ -2,7 +2,7 @@
 # You may add any additional modules and other files you wish
 class books:
 
-    def __init__ (self, title, author):
+    def __init__(self, title, author):
         self.title = title
         self.author = author
         self.is_available = True
@@ -14,17 +14,32 @@ class books:
     def return_book(self):
         self.is_available = True
 
+    def retur (self):
+        if self.is_available == True:
+            state = "Available"
+        else:
+            state = "not Available"
+            return f'{self.title} is {state}'
+
+class User:
+
+    def __init__(self, name, ):
+        self.name = name 
+        self.borrowed = []
+    def retur (self):
+        return f'{self.name} borowed {self.borrowed}'
 
 
 class Library:
     def __init__(self):
         self.books = []
         self.users = []
+        
     
     def add_book(self, title ,author):
-        book = Book(title, author)
-        self.book.appednd(book)
-        return f'Book {title} by {author} added'
+        new_book = books(title, author)
+        self.books.append(new_book)
+        return new_book
 
     def display(self):
         for book in self.books:
@@ -32,6 +47,4 @@ class Library:
                 print(book)
 
 
-    def borrow(self):
-        for book in self.books:
-            if book.title == title and book.is_available:
+    
